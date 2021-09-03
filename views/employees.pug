@@ -1,0 +1,22 @@
+doctype html
+html
+   head
+      title Hello Praveen
+   body
+      p(style="color:red") Lets understand Pug based templating!
+      h1(style="color:green") Praveen Made it easy
+      table(border="2" cellpadding="10") 
+        thead 
+            th FullName
+                button sort
+            th Email
+                button sort
+            th Mobile
+                button sort
+        each val in allemployees
+            tr 
+                td #{val.fullname}
+                td #{val.industry}
+                td #{val.profession}
+
+      

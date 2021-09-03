@@ -1,0 +1,28 @@
+doctype html
+html
+   head
+        title Hello Praveen
+        link(rel="stylesheet",href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css")
+        script(src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js")
+        script(src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js")
+   body
+      p(style="color:red") Lets understand Pug based templating!
+      h1(style="color:green") Praveen Made it easy
+      table(border="2" cellpadding="10") 
+        thead 
+            th FullName
+                button sort
+            th Email
+                button sort
+            th Mobile
+                button sort
+        if allstudents.length!=0
+            each val in allstudents
+                tr 
+                    td #{val.fullname}
+                    td #{val.email}
+                    td #{val.mobile}
+        else
+            h1 no students
+
+      
