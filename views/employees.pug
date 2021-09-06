@@ -15,8 +15,9 @@ html
                 button sort
         each val in allemployees
             tr 
-                td #{val.fullname}
-                td #{val.industry}
-                td #{val.profession}
+                td 
+                    a(href=`/employee/details/${val.mobile}`) #{val.fullname}
+                td #{val.email}
+                td #{val.mobile}
 
       

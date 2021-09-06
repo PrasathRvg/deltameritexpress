@@ -11,6 +11,8 @@ router.get("/studentlist",function(req,res){
     })
 })
 
+
+
 router.post("/sturegister",function(req,res){    
     students.push(req.body);
     res.send("Student registraiton successful")    
