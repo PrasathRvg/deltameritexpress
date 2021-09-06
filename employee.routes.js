@@ -52,7 +52,7 @@ router.post("/empregister",function(req,res){
 })
 
 router.get("/details/:ph",function(req,res){
-    var emp = employees.filter((e,i)=>{
+    var emp = employees.find((e,i)=>{
         console.log(typeof e.mobile)
         console.log(typeof req.params.ph)
         if(e.mobile===Number(req.params.ph)){
@@ -62,7 +62,9 @@ router.get("/details/:ph",function(req,res){
             return false;
         }
     })
-    res.send(emp)
+    res.render("employeedetails",{
+        details:emp
+    })
 })
 
 module.exports = router;
