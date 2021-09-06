@@ -1,5 +1,7 @@
 var express = require("express");
+
 var app = express();
+
 var studentRoutes = require("./student.routes");
 var employeeRoutes = require("./employee.routes")
 
