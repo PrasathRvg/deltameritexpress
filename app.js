@@ -6,6 +6,8 @@ var employeeRoutes = require("./employee.routes")
 app.use(express.urlencoded({ extended: true }))
 app.use(express.json());
 
+app.use(express.static(__dirname+"/open"))
+
 app.set('view engine', 'pug');
 app.set('views','./views');
 
@@ -13,6 +15,10 @@ app.get("/",function(req,res){
    res.sendFile(__dirname+"/homepage.html")
 })
 
+app.use("/student",function(req,res,next){
+   console.log("Student middleware executed")
+   next();
+})
 app.use("/student",studentRoutes)
 
 app.use("/employee",employeeRoutes)
